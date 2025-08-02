@@ -12,37 +12,73 @@
                 <img class="odin-logo" src="images/odin-lined.png">
                 <p class="odin-text">ODIN</p>
             </div>
-            <footer>Photo by Halie West on Unsplash</footer>
+            <div class="emptycontents">
+
+            </div>
+            <footer>Photo by <u>Halie West</u> on <u>Unsplash</u></footer>
         </div>
         <div class="right-contents">
             <p class="top-text">This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
-            <p class="top-text">You know you want to.</p>
-            <form>
+            <p class="top-text">You <em>know</em> you want to.</p>
+            <form id="contact-info-form" method="post" action="">
                 <div class="white-bg-div">
                     <h2>Let's do this!</h1>
+                    <div class="left">
+                        <div class="field">
+                            <label for="first-name">First Name</label>
+                            <input id="first-name" name="first-name" type="text" required>
+                        </div>
+                        <div class="field">
+                            <label for="last-name">Last Name</label>
+                            <input id="last-name" name="last-name" type="text" required>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="field">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" name="phone" type="tel" required>
+                        </div>
+                    </div>
+                    <div class="left">
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <input id="password" name="password" type="password" required>
+                        </div>
+                        <div class="field">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input id="confirm-password" name="confirm-password" type="password" required>
+                        </div>
+                    </div>
 
-                    <label>First Name</label>
-                    <input type="text">
-
-                    <label>Last Name</label>
-                    <input type="text">
-
-                    <label>Email</label>
-                    <input type="email">
-
-                    <label>Phone Number</label>
-                    <input type="tel">
-
-                    <label>Password</label>
-                    <input type="password">
-
-                    <label>Confirm Password</label>
-                    <input type="password">
                 </div>
-                <button>Create Account</button>
             </form>
+            <button form="contact-info-form">Create Account</button>
             <p>Already have an account? <a href="#">Log in</a></p>
         </div>
     </div>
+    <script>
+        const pwdField = document.querySelector("#password");
+        const pwdConfirmField = document.querySelector("#confirm-password");
+        const formElem = document.querySelector("form");  
+
+        const checkPassword = (e) => {
+            if (pwdField.value !== pwdConfirmField.value) {
+                pwdConfirmField.setCustomValidity("Passwords do not match!");
+                e.preventDefault();
+            }
+            else {
+                pwdConfirmField.setCustomValidity("");
+            }
+        }
+
+        formElem.addEventListener("submit", checkPassword);
+        pwdConfirmField.addEventListener("blur", checkPassword);
+        pwdConfirmField.addEventListener("input", checkPassword);
+
+    </script>
 </body>
 </html>
