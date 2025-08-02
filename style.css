@@ -46,6 +46,7 @@ label {
     display: flex;
     background-color: white;
     align-items: center;
+    width: 100vw;
 }
 
 .left-contents {
@@ -99,7 +100,7 @@ label {
     flex-direction: column;
     margin-left: 40px;
     gap: 30px;
-    width: 100%;
+    flex: 1;
 }
 
 p {
@@ -128,10 +129,14 @@ button {
     background-color: #596D48;
     color: white;
     border: none;
-    padding: 10px 40px;
+    padding: 12px 40px;
     border-radius: 6px;
     font-weight: 600;
     max-width: max-content;
+}
+
+p {
+    font-size: 14px;
 }
 
 a {
