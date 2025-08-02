@@ -24,7 +24,7 @@ input, label {
 }
 
 input {
-    border: 1px solid lightgrey;
+    border: 1px solid #E5E7EB;
     border-radius: 2px;
     width: 200px;
     font-size: 100%;
@@ -33,6 +33,11 @@ input {
 
 input:user-invalid {
     border: 1px solid red;
+}
+
+input:focus {
+    outline: 1px solid blue;
+    box-shadow: 4px 4px 4px lightgrey;
 }
 
 label {
